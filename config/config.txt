@@ -1,0 +1,60 @@
+#Date_#Phone_#CallID_#Customer_#CBR_#ReportCode_#ReportDate_#DSLAM_#RepCenter_#Vformulas
+
+Codes: 
+#CallID
+#Callout
+#CBR
+#CommonCause
+#Customer
+#Date
+#DSLAM
+#OOS
+#Office
+#Phone
+#RepCenter
+#ReportCode
+#ReportDate
+#Tested
+#TicketType
+#TroubleType
+#Vformulas
+
+
+There must be an underscore after each code, otherwise it will put them in the same cell.  As formated in the default:
+
+#Date_#Phone_#CallID_#Customer_#CBR_#ReportCode_#ReportDate_#DSLAM_#Vformulas
+
+CSV Modes are 1 - "Day", 2 - "Month", 3 - "Year"
+Filter Block Modes are 1 - Config, 2 - Manual Prompt
+Filter Modes are 1 - Config, 2 - Manual
+Wildcards are PT_Kill, PT_Kill(), Quotes(), and TogglePTFreeze 
+- These wildcards must be surrounded with %'s
+- Example: %PT_Kill%
+- PT_Kill() - You can put a username or version here inside the parenthesis
+- Quotes() - Quote number 1 - 366
+
+**** CC Finder Filters for Report ****
+Instructions: Seperate values with commas and no spaces like so: NSY,IW,STOL,DSL
+"RCODE  : NSY,IW,STOL,DSL"
+You can also do the same for the status as such: TESTBOARD,PENDING,HOLD TESTBOARD,ALLOCATED
+"STATUS : TESTBOARD,PENDING,HOLD TESTBOARD,ALLOCATED"
+If you put a space or any other character before, after or inside of a word, it will be used as if
+if was another later in the word with no bias.  In some cases this could cause mismatch and yield
+undesired results.  If you set the Report Code filter to PHONE it will pull just phone report codes, if
+you set to it ALL it will pull all report codes, and if you set it to DSL it will pull all DSL report codes.
+Setting RCODE to SCRUB will have it pull NDT,CCO,CBC,BDR,DSLCC,DSLDL.  Further suggestions are appreciated.
+
+%Config_File%
+UPDATED: July 23rd, 2013 12:04 PM
+VERSION: v0.7.2.0
+CCMODE : 2
+TBMODE : 1
+LOGGING: ON
+DEBUG  : ON
+HTML   : ON
+BETALIST: app629
+**CC Finder Filters for Report:::
+RCODE  : DSL
+STATUS : TESTBOARD
+FBLOCK : Victoria
+FMODE  : 1
